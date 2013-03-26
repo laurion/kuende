@@ -1,4 +1,4 @@
 class UsersController < ApplicationController
-  def dashboard
+  def lobby
   end
 end

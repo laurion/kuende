@@ -1,13 +1,16 @@
-<div class="modal hide fade" id="login-modal">
+<div id="login-container">
   <%= form_tag "/auth/identity/callback" do %>
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <div class="login-header">
       <h3>Sign in</h3>
     </div>
   
-    <div class="modal-body">
+    <div class="login-body">
+      
+      <% flash.each do |t, notice| %>
+        <div class="alert alert-block"> <%= notice %> </div>
+      <% end %>
+      
 			<div class="login-fields">
-				<!-- <p>Sign in using your registered account:</p> -->
 				<div class="field">
           <%= label_tag :auth_key, "Email" %>
           <%= text_field_tag :auth_key, "", :placeholder => "Email address", :class => "login username-field", :autocomplete => "off" %>
@@ -29,7 +32,7 @@
 
   <!-- Text Under Box -->
 
-    <div class="modal-footer">
+    <div class="login-footer">
       <%= submit_tag "Sign in", :class => "kd-btn orange large" %>
       
     	Don't have an account? <%= link_to "Sign Up", signup_url %><br/>

@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_filter :setup_user
-  layout false
+  layout "landing"
   
   def new
   end
@@ -17,6 +16,6 @@ class SessionsController < ApplicationController
   end
 
   def failure
-    redirect_to root_url, alert: "Authentication failed, please try again."
+    redirect_to signin_url, alert: "Authentication failed, please try again."
   end
 end
