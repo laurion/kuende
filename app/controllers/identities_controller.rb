@@ -1,5 +1,5 @@
 class IdentitiesController < ApplicationController
-  layout false
+  layout "landing"
   
   def new
     @identity = env['omniauth.identity']
