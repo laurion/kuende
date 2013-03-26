@@ -12,11 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
-//= require handlebars
-//= require ember
-//= require ember-data
 //= require_self
-//= require kuende
-window.App = Ember.Application.create();
-//= require_tree .
+//= require landing

@@ -1,0 +1,10 @@
+<div id="landing">
+  <div class="da-logo">
+    <%= image_tag "landing/login.png", :class => "login-btn" %>
+    <%= image_tag "landing/intro.png", :class => "intro-btn" %>
+    <%= image_tag "landing/signup.png", :class => "signup-btn" %>
+  </div>
+  
+  <%= render :partial => "sessions/form" %>
+  <%= render :partial => "identities/form" %>
+</div>

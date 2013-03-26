@@ -1,0 +1,63 @@
+$orange: #f75828;
+$orange-gr-from: #f77a28;
+$orange-gr-to: #f73728;
+
+$blue: #00b5f3;
+
+$green: #83bd39;
+$green-gr-from: #83df39;
+$green-gr-to: #83ac28;
+
+$green2: #a0ce63;
+
+.kd-btn {
+  padding: 4px 12px;
+  background-repeat: repeat-x;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  @include border-radius(4px);
+
+  &:hover {  
+    text-decoration: none;
+    background-position: 0 -15px;
+  
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+  }
+}
+
+
+.kd-btn.orange {
+  background-color: #f75828;
+  
+  @include background-image-gradient($orange-gr-from, $orange-gr-to);
+  
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff77a28', endColorstr='#fff73728', GradientType=0);
+  border-color: $orange-gr-to $orange-gr-to #f723cd;
+  
+  &:hover {
+    background-color: $orange-gr-to;
+  }
+}
+
+.kd-btn.green {
+  background-color: $green;
+  
+  @include background-image-gradient($green-gr-from, $green-gr-to);
+  
+  &:hover {
+   background-color: $green-gr-to; 
+  }
+}
+
+.kd-btn.large {
+  padding: 11px 19px;
+  line-height: 20px;
+  font-size: 18px;
+  
+  @include border-radius(6px);
+}

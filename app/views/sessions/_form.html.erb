@@ -1,0 +1,39 @@
+<div class="modal hide fade" id="login-modal">
+  <%= form_tag "/auth/identity/callback" do %>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Sign in</h3>
+    </div>
+  
+    <div class="modal-body">
+			<div class="login-fields">
+				<!-- <p>Sign in using your registered account:</p> -->
+				<div class="field">
+          <%= label_tag :auth_key, "Email" %>
+          <%= text_field_tag :auth_key, "", :placeholder => "Email address", :class => "login username-field", :autocomplete => "off" %>
+				</div> <!-- /field -->
+
+				<div class="field">
+          <%= label_tag :password, "Password"%>
+          <%= password_field_tag :password, "", :placeholder => "Password", :class => "login password-field", :autocomplete => "off" %>
+				</div> <!-- /password -->
+			</div> <!-- /login-fields -->
+
+			<div class="login-actions">
+				<span class="login-checkbox">
+					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
+					<label class="choice" for="Field">Keep me signed in</label>
+				</span>
+			</div> <!-- .actions -->
+    </div> <!-- /modal-body -->
+
+  <!-- Text Under Box -->
+
+    <div class="modal-footer">
+      <%= submit_tag "Sign in", :class => "kd-btn orange large" %>
+      
+    	Don't have an account? <%= link_to "Sign Up", signup_url %><br/>
+    	Reset <a href="#">Password</a>
+    </div> <!-- /modal-footer -->
+  <% end %>
+</div>

@@ -1,0 +1,39 @@
+@import "utils/mixins";
+@import "utils/buttons";
+
+#landing {
+  position: relative;
+  
+  div.da-logo{
+  	width:500px;
+  	height:500px;
+  
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  
+    margin-top: -250px;
+    margin-left: -250px;
+  
+    img {
+      width: 50%;
+      position: relative;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  
+    .login-btn { right: -20%; top: 0%;}
+    .intro-btn { right: -50%; top: -20%;}
+    .signup-btn { right: -10%; top: -57%;}
+  }  
+}
+
+#login-modal, #signup-modal {
+  form { margin-bottom: 0;}
+  
+  .modal-footer .kd-btn {
+    float: left;
+  }
+}
