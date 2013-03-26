@@ -16,3 +16,15 @@
 /tmp
 
 /config/database.yml
+
+# Ruby artefacts
+
+/.rvmrc
+/.ruby-version
+
+/.rbenv-version
+/.rbenv-gemsets
+/.rbenv-vars
+
+/.powrc
+/.powenv
