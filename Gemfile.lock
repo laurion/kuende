@@ -177,6 +177,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.0.3)
+    rb-readline (0.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.4)
@@ -251,6 +252,7 @@ DEPENDENCIES
   omniauth-identity (= 1.1.0)
   pg
   rails!
+  rb-readline
   rspec-rails
   sass-rails!
   sprockets-rails!

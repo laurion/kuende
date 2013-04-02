@@ -25,6 +25,23 @@ describe "Signup" do
     page.should have_content("Hi identity")
   end
 
+  it "should add user in database" do
+    visit "/signup"
+
+    within("#signup-container") do
+      find("#email").set("a@example.com")
+      find("#password").set("my-password")
+      find("#password_confirmation").set("my-password")
+    end
+
+    page.find(".kd-btn.signup-btn").click
+
+    Identity.where(email: "a@example.com").size.should eql(1)
+    id = Identity.where(email: "a@example.com").first
+
+    User.where(:provider => "identity", :uid => id.id)
+  end
+
   it "should not signup user in without matching confirmation" do
     visit "/signup"
     
@@ -39,10 +56,10 @@ describe "Signup" do
   end
   
   it "should not create user if already exists an account" do
-    visit "/signup"
-    
     FactoryGirl.create(:identity, email: "a@example.com", password: "my-password")
-    
+
+    visit "/signup"
+        
     within("#signup-container") do
       find("#email").set("a@example.com")
       find("#password").set("my-password")
